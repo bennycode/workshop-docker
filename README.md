@@ -94,3 +94,20 @@ docker logs -f <CONTAINER NAME>
 ```yml
 docker rm <CONTAINER ID>
 ```
+
+## Docker Compose
+
+### Start Composition
+
+```yml
+docker-compose up -d
+docker-compose -f docker-compose.yml up -d
+docker-compose -p ninja-workshop up -d
+docker-compose --profile dev up -d
+```
+
+### Terminate Composition
+
+```yml
+docker-compose -p ninja-workshop down
+```

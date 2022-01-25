@@ -6,8 +6,8 @@
   "description": "",
   "keywords": [],
   "license": "ISC",
-  "main": ".src/start.js",
-  "name": "workshop-docker",
+  "main": "./src/start.js",
+  "name": "our-api",
   "scripts": {
     "start": "node ./src/start.js"
   },

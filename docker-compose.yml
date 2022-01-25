@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  our-api:
+    container_name: 'our-api-container'
+    build: ./our-api
+    restart: "no"
+    ports:
+      - '80:80'
+    environment:
+      API_NAME: your-api
