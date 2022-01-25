@@ -65,6 +65,7 @@ docker image rm lambot-1_tws:latest
 ```yml
 docker run -d <REPOSITORY:TAG>
 docker run -d -p <CONTAINER PORT>:<IMAGE PORT> our-server:latest
+docker run --env-file=.env -d -p 8080:1339 our-server:latest
 
 # Example:
 docker run -d our-server:latest
