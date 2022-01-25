@@ -1,12 +1,16 @@
-FROM node:16-alpine
+FROM node:16.13.2-alpine3.15
 
-# Use /app
+# Create dirs
 WORKDIR /app
-# Create /app/src
 RUN mkdir "src"
-# Create /app/src/start.js
-COPY ./src/start.js ./src
-# Create /app/package.json
-COPY ./package.json .
 
+# Create files
+COPY ./src/start.js ./src
+COPY ./package.json .
+COPY ./package-lock.json .
+
+# Install dependencies
+RUN npm install
+
+# Start server
 CMD npm start

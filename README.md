@@ -18,7 +18,7 @@ Level 2:
 
 Examples:
 
-- Shell Form: `RUN chmod + x ./ hello.sh `
+- Shell Form: `RUN chmod + x ./hello.sh`
 - Exec Form: `RUN ["python", "hello.py"]`
 - https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
 
@@ -58,15 +58,17 @@ docker rmi <IMAGE ID>
 docker image rm lambot-1_tws:latest
 ```
 
-## Container
+## Containers
 
 ### Run Containers
 
 ```yml
 docker run -d <REPOSITORY:TAG>
+docker run -d -p <CONTAINER PORT>:<IMAGE PORT> our-server:latest
 
 # Example:
 docker run -d our-server:latest
+docker run -d -p 8080:80 our-server:latest
 ```
 
 ### Show Containers

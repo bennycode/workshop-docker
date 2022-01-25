@@ -1,5 +1,8 @@
 {
   "author": "",
+  "dependencies": {
+    "express": "4.17.x"
+  },
   "description": "",
   "keywords": [],
   "license": "ISC",
