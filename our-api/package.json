@@ -1,7 +1,8 @@
 {
   "author": "",
   "dependencies": {
-    "express": "4.17.x"
+    "express": "4.17.x",
+    "ws": "8.4.2"
   },
   "description": "",
   "keywords": [],
@@ -9,7 +10,8 @@
   "main": "./src/start.js",
   "name": "our-api",
   "scripts": {
-    "start": "node ./src/start.js"
+    "start": "node ./src/start.js",
+    "start-wss": "node ./src/start-wss.js"
   },
   "version": "1.0.0"
 }
