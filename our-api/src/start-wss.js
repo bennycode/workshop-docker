@@ -12,17 +12,22 @@ wss.on('connection', socket => {
   socket.on('message', (message) => {
     const request = JSON.parse(message);
 
-    console.log('Received message on server', request);
-
-    if (request.type === 'hello') {
-      wss.clients.forEach(client =>
-        client.send(
+    if (request.user === 'bennycode') {
+      let i = 0;
+      const interval = setInterval(() => {
+        socket.send(
           JSON.stringify({
-            text: 'Welcome to the club!',
-            type: 'hello',
+            user: request.user,
+            text: i++,
           })
-        )
-      );
+        );
+
+        // Clean-up dead clients
+        if (i === 3) {
+          clearInterval(interval);
+          socket.close();
+        }
+      }, 1000);
     }
   });
 });

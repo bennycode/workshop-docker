@@ -6,17 +6,29 @@
     </head>
     <body>
         <script>
-          const socket = new WebSocket('ws://localhost:5000/');
+          function connectToWebSocket() {
+            const socket = new WebSocket('ws://localhost:5000/');
 
-          socket.onmessage = (event) => {
-            const data = JSON.parse(event.data);
-            console.log('Message from server ', data);
-            document.write(`<b>${data.text}</b>`);
-          };
+            const user = 'bennycode';
 
-          socket.onopen = () => {
-            socket.send(JSON.stringify({"type": 'hello'}));
-          };
+            socket.onmessage = (event) => {
+              const data = JSON.parse(event.data);
+              if (data.user === user) {
+                document.write(`<b>${data.text}</b>`);
+              }
+            };
+
+            socket.onopen = () => {
+              socket.send(JSON.stringify({type: 'hello', user}));
+            };
+
+            socket.onclose = () => {
+              console.log('Server disconnected.');
+              connectToWebSocket();
+            };
+          }
+
+          connectToWebSocket();
         </script>
     </body>
 </html>
