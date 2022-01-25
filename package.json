@@ -1,0 +1,12 @@
+{
+  "author": "",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": ".src/start.js",
+  "name": "workshop-docker",
+  "scripts": {
+    "start": "node ./src/start.js"
+  },
+  "version": "1.0.0"
+}
