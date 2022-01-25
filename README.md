@@ -42,12 +42,6 @@ docker image list
 docker image ls
 ```
 
-### Run Images
-
-```yml
-docker run -d our-server:latest
-```
-
 ### Remove Images
 
 ```yml
@@ -66,6 +60,7 @@ docker image rm lambot-1_tws:latest
 docker run -d <REPOSITORY:TAG>
 docker run -d -p <CONTAINER PORT>:<IMAGE PORT> our-server:latest
 docker run --env-file=.env -d -p 8080:1339 our-server:latest
+docker run --name some-container -e POSTGRES_USER=root -d postgres
 
 # Example:
 docker run -d our-server:latest
@@ -103,6 +98,7 @@ docker rm <CONTAINER ID>
 docker-compose up -d
 docker-compose -f docker-compose.yml up -d
 docker-compose -p ninja-workshop up -d
+docker-compose -p ninja-workshop --env-file=.env up -d
 docker-compose --profile dev up -d
 ```
 

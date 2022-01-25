@@ -8,3 +8,23 @@ services:
       - '80:80'
     environment:
       API_NAME: your-api
+  our-db:
+    container_name: 'our-db-container'
+    image: postgres:13-alpine3.15
+    restart: "no"
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: '${DB1_NAME}'
+      POSTGRES_PASSWORD: '${DB1_PASS}'
+      POSTGRES_USER: '${DB1_USER}'
+  our-second-db:
+    container_name: 'our-second-db-container'
+    image: postgres:13-alpine3.15
+    restart: "no"
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_DB: '${DB2_NAME}'
+      POSTGRES_PASSWORD: '${DB2_PASS}'
+      POSTGRES_USER: '${DB2_USER}'
