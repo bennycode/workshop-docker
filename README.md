@@ -90,6 +90,16 @@ docker logs -f <CONTAINER NAME>
 docker rm <CONTAINER ID>
 ```
 
+### Publish Container
+
+- Docker Registries: Docker Hub, GitHub's Docker Registry (https://ghcr.io), Google Container Registry
+
+```yml
+docker login ghcr.io --username phanatic --password-stdin
+docker tag app ghcr.io/phanatic/app:1.0.0
+docker push ghcr.io/phanatic/app:1.0.0
+```
+
 ## Docker Compose
 
 ### Start Composition
