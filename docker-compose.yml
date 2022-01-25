@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   our-api:
+    command: npm run start
     container_name: 'our-api-container'
     build: ./our-api
     restart: "no"
@@ -8,6 +9,12 @@ services:
       - '80:80'
     environment:
       API_NAME: your-api
+  our-ws:
+    command: npm run start-wss
+    build: ./our-api
+    restart: "no"
+    ports:
+      - '5000:5000'
   our-db:
     container_name: 'our-db-container'
     image: postgres:13-alpine3.15

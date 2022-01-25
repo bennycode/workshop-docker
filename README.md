@@ -99,6 +99,7 @@ docker-compose up -d
 docker-compose -f docker-compose.yml up -d
 docker-compose -p ninja-workshop up -d
 docker-compose -p ninja-workshop --env-file=.env up -d
+docker-compose -p ninja-workshop --env-file=.env up -d --build # enforce new Image builds
 docker-compose --profile dev up -d
 ```
 
