@@ -12,5 +12,9 @@ COPY ./package-lock.json .
 # Install dependencies
 RUN npm install
 
+# Setup environment variables
+ENV APP_PORT=1337
+EXPOSE ${APP_PORT}
+
 # Start server
 CMD npm start
