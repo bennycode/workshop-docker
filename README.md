@@ -90,7 +90,7 @@ docker logs -f <CONTAINER NAME>
 docker rm <CONTAINER ID>
 ```
 
-### Publish Container
+### Publish Images
 
 - Docker Registries: Docker Hub, GitHub's Docker Registry (https://ghcr.io), Google Container Registry
 
