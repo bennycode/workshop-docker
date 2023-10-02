@@ -102,6 +102,16 @@ docker push ghcr.io/phanatic/app:1.0.0
 
 ## Docker Compose
 
+> [!IMPORTANT]  
+> The "docker-compose" command belongs to Docker Compose V1
+> The "docker compose" command belongs to Docker Compose V2
+ 
+Preferred syntax is V2:
+
+```bash
+docker compose --profile dev up -d
+```
+
 ### Start Composition
 
 ```yml
@@ -117,4 +127,5 @@ docker-compose --profile dev up -d
 
 ```yml
 docker-compose -p ninja-workshop down
+docker compose --profile dev down -v
 ```

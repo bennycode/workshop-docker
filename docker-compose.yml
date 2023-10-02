@@ -26,6 +26,7 @@ services:
       POSTGRES_PASSWORD: '${DB1_PASS}'
       POSTGRES_USER: '${DB1_USER}'
   our-second-db:
+    profiles: [dev]
     container_name: 'our-second-db-container'
     image: postgres:13-alpine3.15
     restart: "no"
@@ -35,3 +36,8 @@ services:
       POSTGRES_DB: '${DB2_NAME}'
       POSTGRES_PASSWORD: '${DB2_PASS}'
       POSTGRES_USER: '${DB2_USER}'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready']
+      interval: 10s
+      timeout: 5s
+      retries: 5
