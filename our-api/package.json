@@ -1,7 +1,7 @@
 {
   "author": "",
   "dependencies": {
-    "express": "4.17.x",
+    "express": "4.19.x",
     "ws": "8.4.2"
   },
   "description": "",
